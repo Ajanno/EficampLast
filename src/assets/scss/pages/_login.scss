@@ -1,4 +1,27 @@
-@import "login/_box.scss";
-@import "login/_imput.scss";
-@import "login/_cta.scss";
-@import "login/_typo.scss";
+.loginwrapper {
+	background-image: url(../img/loginBcg.jpg);
+	height: 100vh;
+	padding: 3rem 0;
+	text-align: right;
+
+	.logologin {
+		width: 100px;
+		height: auto;
+		text-align: right;
+	}
+
+
+	.login-appla {
+		padding: 3rem;
+		color: $mywhite;
+		text-align: center;
+		background-color: $logincolor;
+		height:60vh;
+
+		img {
+			border-radius: 50px;
+		}
+
+
+	}
+}
