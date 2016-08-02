@@ -1,27 +1,102 @@
+
+
+.login-appla,
+.login-form-wrapper,
+.login-form-wrapper input {
+	border-radius: 4px;
+}
+
 .loginwrapper {
 	background-image: url(../img/loginBcg.jpg);
 	height: 100vh;
-	padding: 3rem 0;
+	padding: 2.5rem 0;
 	text-align: right;
-
-	.logologin {
-		width: 100px;
-		height: auto;
-		text-align: right;
-	}
+	font-family: 'Roboto Condensed', sans-serif;
 
 
 	.login-appla {
-		padding: 3rem;
+		background-color: $logincolor;
+		padding: 1.5rem 1.5rem;
+		
 		color: $mywhite;
 		text-align: center;
-		background-color: $logincolor;
-		height:60vh;
+		
+		h1 {
+			padding: 0;
+			margin:0;
+			font-family: 'Roboto Condensed', sans-serif;
+			font-size: 2.5rem;
+			font-weight: 300;
 
-		img {
-			border-radius: 50px;
 		}
+		.login-info {
+			font-size: .9rem;
+			margin-top: -.5rem;
+			margin-bottom: 9.375rem;
+		}
+		.login-form-wrapper {
+			padding: 1.5rem;
+			
+			border: 1px solid $mytranswhite;
 
+			.login-avatar {
+				border: 1px solid $mytranswhite;
+				border-radius: 50px;
+				margin-top: -75px;
+			}
+			p {
+				font-weight: 700;
+				margin-top: .75rem;
+				margin-bottom: .625rem;
+			}
 
+			input[type="text"]{
+				width: 90%;
+				height: 30px;
+				display: inline-block;
+				padding: 5px 20%;
+				
+				border-top: 2px solid $mygray;
+
+			}
+			input[type="submit"] {
+				width: 25%;
+				height: 30px;
+				box-shadow: none;
+				border: none;
+				background: $mywhite;
+				color: $myblack;
+				text-transform: uppercase;
+				font-weight:  300;
+			}
+
+			.keyboard {
+				display: inline-block;
+			}
+			form {
+				margin-bottom: 5rem;
+			}
+		}
 	}
 }
+
+.Rounded_Rectangle_8_copy_17 {
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 695px;
+  top: 435px;
+  width: 118px;
+  height: 31px;
+  z-index: 9;
+}
+.Layer_49_copy_11 {
+  background-image: url("Layer 49 copy 11.png");
+  position: absolute;
+  left: 497px;
+  top: 378px;
+  width: 409px;
+  height: 37px;
+  z-index: 26;
+}
+
