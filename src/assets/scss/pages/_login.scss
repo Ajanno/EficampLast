@@ -8,6 +8,7 @@
 
 .loginwrapper {
 	background-image: url(../img/loginBcg.jpg);
+	background-size: cover;
 	height: 100vh;
 	padding: 2.5rem 0;
 	text-align: right;
@@ -36,6 +37,7 @@
 		}
 		.login-form-wrapper {
 			padding: 1.5rem;
+			margin-bottom: 5rem;
 			
 			border: 1px solid $mytranswhite;
 
@@ -69,34 +71,51 @@
 				text-transform: uppercase;
 				font-weight:  300;
 			}
+			label{
+				color: $mywhite;
+				text-transform: uppercase;
+
+				display: inline;
+				margin-right: 20px;
+			}
 
 			.keyboard {
 				display: inline-block;
 			}
 			form {
-				margin-bottom: 5rem;
+				margin-bottom: 3rem;
+			}
+		}
+	}
+	.menu-container {
+		padding: 0;	
+		.login-menu {
+			
+			padding: 0;
+			margin-top: 1.5rem;
+			li {
+				a {
+					color:$mywhite;
+			 		text-transform: uppercase;
+					font-weight: bold;
+					text-shadow: 1px 1px 1px #0f0f0f;
+					font-size: .6875rem;
+					
+				}
+				&:first-child {
+					a {
+						padding-left: 0;
+					}
+				}
+				&:last-child {
+					
+				}
+
 			}
 		}
 	}
 }
 
-.Rounded_Rectangle_8_copy_17 {
-  border-radius: 4px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  left: 695px;
-  top: 435px;
-  width: 118px;
-  height: 31px;
-  z-index: 9;
-}
-.Layer_49_copy_11 {
-  background-image: url("Layer 49 copy 11.png");
-  position: absolute;
-  left: 497px;
-  top: 378px;
-  width: 409px;
-  height: 37px;
-  z-index: 26;
-}
+
+
 
