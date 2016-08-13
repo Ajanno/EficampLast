@@ -52,13 +52,21 @@
 				margin-bottom: .625rem;
 			}
 
-			input[type="text"]{
+			input[type="password"]{
 				width: 90%;
 				height: 30px;
 				display: inline-block;
 				padding: 5px 20%;
-				
+				position: relative;
 				border-top: 2px solid $mygray;
+				&:hover{
+					border-top:2px solid $logindark;
+				}
+				&:focus {
+					border-top:2px solid $logindark;
+					box-shadow: 0px -2px 5px -1px $loginlight;
+
+					}
 
 			}
 			input[type="submit"] {
@@ -66,10 +74,15 @@
 				height: 30px;
 				box-shadow: none;
 				border: none;
+				border-top: 2px solid $mygray;
 				background: $mywhite;
 				color: $myblack;
 				text-transform: uppercase;
 				font-weight:  300;
+				&:hover{
+					border-top:2px solid $logindark;
+					opacity: .9;
+				}
 			}
 			label{
 				color: $mywhite;
@@ -81,6 +94,9 @@
 
 			.keyboard {
 				display: inline-block;
+				&:hover{
+					opacity: .9;
+				}
 			}
 			form {
 				margin-bottom: 3rem;
@@ -93,13 +109,21 @@
 			
 			padding: 0;
 			margin-top: 1.5rem;
+			display: flex;
 			li {
-				a {
+				display: flex;
+				a {	
+					opacity: .9;
 					color:$mywhite;
 			 		text-transform: uppercase;
 					font-weight: bold;
 					text-shadow: 1px 1px 1px #0f0f0f;
 					font-size: .6875rem;
+					&:hover,
+					&:focus {
+						opacity: 1;
+						transition: opacity 1s;
+					}
 					
 				}
 				&:first-child {
@@ -108,14 +132,51 @@
 					}
 				}
 				&:last-child {
-					
+					margin-left: auto;
+					a{
+
+						padding-right:5px;
+					}
 				}
 
 			}
 		}
 	}
 }
+.login-form-wrapper {
+	.pass-imput {
+		position: relative;
+		.pass-none{
+			text-transform: uppercase;
+			background-color: $alertred;
+			color: #fff;
+			font-size: .8rem;
+			width: 30%;
+			
+			position: absolute;
+			z-index: 15;
+			border-radius: 5px 5px 5px 0;
+			top: -35px;
+			left: 30px;
+			p {
+				margin: 0;
+				padding: 2px;
+			}
+			&:before{
+				content: " ";
+				border-top: 10px solid $alertred;
+				border-left: 0px solid transparent;
+				border-right: 10px solid transparent;
+				position: absolute;
+				left: 0;
+				bottom: -10px;
 
+
+			}
+		}
+	}
+	
+}
 
 
 
