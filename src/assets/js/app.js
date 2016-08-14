@@ -1,7 +1,11 @@
 
+var $form = $("#login-form");
 var $passField = $(".login-name");
+var $passBoxes = $(".my-pass");
 var	$noPassBox = $(".pass-none");
+var $wrongPassBox = $(".pass-wrong");
 var $submitButton = $(".submit-button");
+var newUrl = "http://google.com"
 
 
 
@@ -15,13 +19,18 @@ function efiapi(pass){
 
 	  url: "https://efigence-camp.herokuapp.com/api/login",
 	  error: function(response) {
-	    console.log(response.responseText);
-	    $(".pass-allert").html("<p>Blędne hasło </p>");
+	  	var badresp = $.parseJSON(response.responseText);
+	    console.log($.parseJSON(response.responseText));
+	    // alert(badresp.message);
+	    $(".pass-wrong p").text(badresp.message);
+	    $wrongPassBox.show('slow').delay(1000).hide('slow');
 
 
 	  },
 	  success: function(response) {
 	    console.log(response);
+	    $(location).attr('href',newUrl);
+
 
 	  }
 
@@ -46,8 +55,11 @@ function hideOrShow$noPassBox(){
 
 
 $(document).on("ready", function(){
-	//Chowam boxy i blokuje przycisk
-	$noPassBox.hide();
+
+	
+
+	//Chowam boxy 
+	$passBoxes.hide();
 	// validacja pola
 	$passField.focus(function(){
 		hideOrShow$noPassBox();
@@ -61,27 +73,13 @@ $(document).on("ready", function(){
 		console.log("funkcja key down");
 	});
 	
-
-
-
-	
-
-	$submitButton.on("click", function(event){
-		event.preventDefault();
+	//zmieniam zachowanie formularza
+	$form.on("submit", function(evt){
+		evt.preventDefault();
 		var login = $passField.val();
-		console.log(login);
-
-		//validacja wartosci iputa
 		if (login.length!=0) {
 			efiapi(login);
-		} else {
-			alert('wprowadz hasło');
-		}
-
-
-
-
-
+		} 
 	});
 
 	//funkcja 2

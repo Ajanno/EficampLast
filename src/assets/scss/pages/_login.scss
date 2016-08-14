@@ -52,6 +52,7 @@
 				margin-bottom: .625rem;
 			}
 
+
 			input[type="password"]{
 				width: 90%;
 				height: 30px;
@@ -146,22 +147,25 @@
 .login-form-wrapper {
 	.pass-imput {
 		position: relative;
-		.pass-none{
+		.my-pass{
 			text-transform: uppercase;
 			background-color: $alertred;
 			color: #fff;
 			font-size: .8rem;
 			width: 30%;
-			
 			position: absolute;
 			z-index: 15;
-			border-radius: 5px 5px 5px 0;
-			top: -35px;
+			
 			left: 30px;
 			p {
 				margin: 0;
 				padding: 2px;
 			}
+		}
+		.pass-none{	
+			border-radius: 5px 5px 5px 0;
+			top: -35px;
+			
 			&:before{
 				content: " ";
 				border-top: 10px solid $alertred;
@@ -170,6 +174,21 @@
 				position: absolute;
 				left: 0;
 				bottom: -10px;
+
+
+			}
+		}
+		.pass-wrong{
+			border-radius: 0 5px 5px 5px;
+			bottom: -11px;
+			&:before{
+				content: " ";
+				border-bottom: 10px solid $alertred;
+				border-left: 0px solid transparent;
+				border-right: 10px solid transparent;
+				position: absolute;
+				left: 0;
+				top: -10px;
 
 
 			}
