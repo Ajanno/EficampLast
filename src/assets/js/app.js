@@ -23,7 +23,9 @@ function efiapi(pass){
 	    console.log($.parseJSON(response.responseText));
 	    // alert(badresp.message);
 	    $(".pass-wrong p").text(badresp.message);
-	    $wrongPassBox.show('slow').delay(1000).hide('slow');
+	    $wrongPassBox.show('slow').attr('aria-hidden', false)
+	    			.delay(1000)
+	    			.hide('slow').attr('aria-hidden', true);
 
 
 	  },
@@ -41,13 +43,16 @@ function is$passFieldIsempty(){
 	console.log($passField.val().length!=0);
 	return $passField.val().length!=0;
 }
+
 function hideOrShow$noPassBox(){
 	if(is$passFieldIsempty()){
-		$noPassBox.hide("slow");
-		console.log("pole jest pelne");
+		$noPassBox.hide("slow").attr('aria-hidden', true);
+		$passField.attr('aria-invalid', false);
+		
 	} else {
-		$noPassBox.show("slow");
-		console.log("pole jest puste");
+		$noPassBox.show("slow").attr('aria-hidden', false);
+		$passField.attr('aria-invalid', true);
+		
 	}
 } 
 
@@ -59,18 +64,18 @@ $(document).on("ready", function(){
 	
 
 	//Chowam boxy 
-	$passBoxes.hide();
+	$passBoxes.hide().attr('aria-hidden', true);
 	// validacja pola
 	$passField.focus(function(){
 		hideOrShow$noPassBox();
-		console.log("funkcja focus");
+		
 	}).keyup(function(){
 		hideOrShow$noPassBox();
-		console.log("funkcja key up");
+		
 	})
 	.keydown(function(){
 		hideOrShow$noPassBox();
-		console.log("funkcja key down");
+		
 	});
 	
 	//zmieniam zachowanie formularza
