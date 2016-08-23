@@ -102,7 +102,7 @@
 	padding: 1rem;
 	border-radius: 5px;
 	background-color: $alertred;
-	
+
 	
 	
 	&:before {
@@ -144,20 +144,19 @@
 }
 
 .dashboard-right-menu{
-		.dashboard-search {
-			overflow: hidden;
+	.dashboard-search {
+		overflow: hidden;
 			input {
-			padding:5px 15px;
-			height: 30px;
-			width: 130px;
-			margin-top: 42px;
-			margin-right: 10px;
-			border-radius: 20px 0 0 20px;
-			display: inline-block;
-			margin-right: -140px;
-			transition: margin 1s linear;
-			
-			
+				padding:5px 15px;
+				height: 30px;
+				width: 130px;
+				margin-top: 42px;
+				margin-right: 10px;
+				border-radius: 20px 0 0 20px;
+				display: inline-block;
+				margin-right: -140px;
+				transition: margin 1s linear;
+
 			&:focus {
 				margin-right: 10px;
 			}
@@ -166,6 +165,7 @@
 
 		display: inline-block;
 		}
+
 		&:hover {
 			input {
 				margin-right: 10px;
@@ -224,5 +224,21 @@
 		bottom: 0;
 		transition: bottom 1s linear;
 	}
+	}
+}
+
+.dashboard-main{
+	background-color: $graybackground;
+	h1 {
+		margin-top: 3rem;
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 3rem;
+		font-weight: 300;
+	}
+}
+.dashboard-summary{
+	h2{
+
+
 	}
 }
