@@ -1,0 +1,15 @@
+@mixin dashboard-menu {
+				line-height: 2;
+				text-align: center;
+				display: block;
+				min-height: 100%;
+				
+
+}
+@mixin trinagle-base{
+	content: " ";
+	display:block;
+	position: absolute;
+	width: 0;
+	height: 0;
+}

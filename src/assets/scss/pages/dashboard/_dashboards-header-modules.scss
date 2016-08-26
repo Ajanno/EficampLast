@@ -1,0 +1,158 @@
+.dashboard-massages {
+    position: relative;
+
+    span {
+        position: absolute;
+        display: block;
+        padding: 0 5.5px;
+        border-radius: 7px;
+        top: -7px;
+        right: -7px;
+        font-size: .7rem;
+        background-color: $alertred;
+        display: none;
+    }
+}
+
+.dashboard-massege-toolpip {
+    width: 100%;
+
+    // height: 200px;
+    position: absolute;
+    bottom: -200;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: $alertred;
+
+    &:before {
+        @include trinagle-base;
+
+        border-bottom: 25px solid $alertred;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        top: -25px;
+        right: 40%;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+
+        li {
+            background-color: $logincolor;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            font-size: .9rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.dashboard-settings {
+    &:hover {
+        i {
+            animation-name: spin;
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+.dashboard-right-menu {
+    .dashboard-search {
+        overflow: hidden;
+
+        input {
+            padding: 5px 15px;
+            height: 30px;
+            width: 130px;
+            margin-top: 42px;
+            margin-right: 10px;
+            border-radius: 20px 0 0 20px;
+            display: inline-block;
+            margin-right: -140px;
+            transition: margin 1s linear;
+
+            &:focus {
+                margin-right: 10px;
+            }
+        }
+
+        a {
+            display: inline-block;
+        }
+
+        &:hover {
+            input {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.avatar-container {
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+
+    &:before, &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        background-color: $mytranswhite;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    &:before {
+        top: -50%;
+        transition: top 1s linear;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &:after {
+        bottom: -50%;
+        transition: bottom 1s linear;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    span {
+        font-size: 2.2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        z-index: 6;
+    }
+
+    &:hover {
+        span {
+            display: block;
+            animation-name: fadein;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+        }
+
+        &:before {
+            top: 0;
+            transition: top 1s linear;
+        }
+
+        &:after {
+            bottom: 0;
+            transition: bottom 1s linear;
+        }
+    }
+}
+

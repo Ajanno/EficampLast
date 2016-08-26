@@ -1,6 +1,6 @@
 <header class="dashboard-header">
 	<div class="row">
-		<div class="columns small-12 medium-5">
+		<div class="columns small-12 medium-12 large-5">
 			<div class="dashboard-user-info">
 				<div class="row">
 					<div class="columns small-6">
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="columns small-12 medium-4">
+		<div class="columns small-12 medium-7 large-4">
 			<nav class="dashboard-main-nav">
 				<ul class="menu">
 					<li class="dashboard-selected">
@@ -65,7 +65,7 @@
 			</nav>
 			
 		</div>
-		<div class="columns small-12 medium-3">
+		<div class="columns small-12 medium-5 large-3">
 			<ul class="menu align-right dashboard-right-menu">
 				<li>
 					<a href="#" class="dashboard-logout">
@@ -92,27 +92,41 @@
 	</div>
 </header>
 <main class="dashboard-main">
-	<section class="dashboard-summary">
-		<div class="row">
-			<div class="column small-12">
-				<h1>Finnace life stream</h1>
-			</div>
-			<div class="column small-12 medium-3">
-				<h2>Balance</h2>
-				<span class="dashboard-summary-balance"></span>
-			</div>
-			<div class="column small-12 medium-3">
-				<h2>Avaible funds</h2>
-				<span class="dashboard-summary-funds"></span>
-			</div>
-			<div class="column small-12 medium-3">
-				<h2>Schedulen payments</h2>
-				<span class="dashboard-summary-payments"></span>
-			</div>
-			<div class="column small-12 medium-3">
-
+<section class="dashboard-summary">
+	<div class="row">
+		<div class="column small-12 medium-8 large-8">
+			<h1>Finnace life stream</h1>
+		</div>
+		<div class="column small-12 medium-4 large-4">
+			<div class="summary-headline-buttons text-right">
+				<span class="text-bold">Add&nbsp;</span>
+				<a href="#features" class="button">bank</a>
+				<a href="#features" class="button">payment</a>
 			</div>
 		</div>
-	</section>
+	</div>
+	<div class="row">
+		<div class="column small-12 medium-3">
+			<h2>Balance</h2>
+			<span class="dashboard-summary-balance text-bold"></span><span class="currency"> PLN</span>
+		</div>
+		<div class="column small-12 medium-3">
+			<h2>Avaible funds</h2>
+			<span class="dashboard-summary-funds text-bold"></span><span class="currency"> PLN</span>
+		</div>
+		<div class="column small-12 medium-3">
+			<h2>Schedulen payments</h2>
+			<span class="dashboard-summary-payments text-bold"></span><span class="currency"> PLN</span>
+		</div>
+		<div class="column small-12 medium-3">
+			<div class="switch small">
+				<input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch">
+				<label class="switch-paddle" for="smallSwitch">
+					<span class="show-for-sr">Small Portions Only</span>
+				</label>
+			</div>
+		</div>
+	</div>
+</section>
 </main>
 <footer></footer>

@@ -55,15 +55,16 @@
 @import "_fonts";
 
 
-@import "components/_modules";
-@import "components/_inputs";
-@import "components/_modals";
+@import "components/_animation.scss";
+@import "components/_mixins.scss";
+@import "components/_modules.scss";
 
 
-@import "components/_header";
-@import "components/_nav";
-@import "components/_sectionname";
-@import "components/_footer";
+
 
 @import "pages/_login";
+
+//dashboard imports
 @import "pages/_dashboard.scss";
+@import "pages/dashboard/_dashboards-header-modules.scss";
+@import "pages/dashboard/_dashboardsummary.scss";

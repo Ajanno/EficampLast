@@ -5,23 +5,9 @@ $(document).on("ready", function() {
     var $passBoxes = $(".my-pass");
     var $noPassBox = $(".pass-none");
     var $wrongPassBox = $(".pass-wrong");
-    var $submitButton = $(".submit-button");
     var newUrl = "dashboard.html";
-    var notify = [{
-            notifyText: "Lorem ipsum dolor sit amet."
-        }, {
-            notifyText: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, et, rerum!"
-        }, {
-            notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
-        },
-         {
-            notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
-        },
-        
 
-    ];
-
-//Login Page Scrips
+    //Login Page Scrips
     //Core of login page API-Engine
     function efiapi(pass) {
         $.ajax({
@@ -47,12 +33,12 @@ $(document).on("ready", function() {
         });
     } //End of efiapi
     //Login field validation
-    function is$passFieldIsempty() {
+    function isPassFieldIsempty() {
         return $passField.val().length !== 0;
     } // end of is$passFieldIsEmty
 
-    function hideOrShow$noPassBox() {
-        if (is$passFieldIsempty()) {
+    function hideOrShownoPassBox() {
+        if (isPassFieldIsempty()) {
             $noPassBox.hide("slow").attr('aria-hidden', true);
             $passField.attr('aria-invalid', false);
 
@@ -67,39 +53,15 @@ $(document).on("ready", function() {
     $passBoxes.hide().attr('aria-hidden', true);
 
     $passField.on("focus keyup keydown", function() {
-        hideOrShow$noPassBox();
+        hideOrShownoPassBox();
     }); //end of form validation
 
     //Login Scirpt
     $form.on("submit", function(event) {
         event.preventDefault();
-        if (is$passFieldIsempty()) {
+        if (isPassFieldIsempty()) {
             efiapi($passField.val());
         }
     }); //end of submit	 
- //DASHBOARD PAGES SCRPITS
-    //MESSAGES
-     function massageGenerator(){
-    	let list = "<ul>"
-	    $.each(notify, function() {
-	        $.each(this, function(name, value) {
-	            list += "<li>" +value+" </li>"
-	        });
-	    });
-	    list += "</ul>";
-	    return list;	   	
-	}
 
-	//Massege notification
-    if (notify.length > 0) {
-        $(".dashboard-massages span").show().text(notify.length);
-    } else {
-        $(".dashboard-massages span").hide()
-    }
-    //Message tooltip
-    $(".dashboard-massege-toolpip").html(massageGenerator()).hide();
-  	$(".dashboard-massages").on("click", function(event) {
-  		event.preventDefault();
-  		$(".dashboard-massege-toolpip").toggle("slow");
-  	});
 }); //end of document
