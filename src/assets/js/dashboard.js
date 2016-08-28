@@ -1,22 +1,19 @@
 $(document).on("ready", function() {
     var notify = [{
-            notifyText: "Lorem ipsum dolor sit amet."
-        }, {
-            notifyText: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, et, rerum!"
-        }, {
-            notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
-        }, {
-            notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
-        },
-
-
-    ];
+        notifyText: "Lorem ipsum dolor sit amet."
+    }, {
+        notifyText: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, et, rerum!"
+    }, {
+        notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
+    }, {
+        notifyText: "Dolor sit amet, consectetur adipisicing elit. Aut quos itaque dolor! Impedit!Lorem ipsum dolor sit amet."
+    }, ];
     //MESSAGES
     function massageGenerator() {
-        let list = "<ul>"
+        let list = "<ul>";
         $.each(notify, function() {
             $.each(this, function(name, value) {
-                list += "<li>" + value + " </li>"
+                list += "<li>" + value + " </li>";
             });
         });
         list += "</ul>";
@@ -27,7 +24,7 @@ $(document).on("ready", function() {
     if (notify.length > 0) {
         $(".dashboard-massages span").show().text(notify.length);
     } else {
-        $(".dashboard-massages span").hide()
+        $(".dashboard-massages span").hide();
     }
 
     //Message tooltip
@@ -35,6 +32,11 @@ $(document).on("ready", function() {
     $(".dashboard-massages").on("click", function(event) {
         event.preventDefault();
         $(".dashboard-massege-toolpip").toggle("slow");
+    });
+    $(".dashboard-main-nav li").on("click", function() {
+       $(this).addClass('dashboard-selected').siblings().removeClass('dashboard-selected');
+
+       
     });
 
 
@@ -54,21 +56,18 @@ $(document).on("ready", function() {
         });
     }
 
+    function efiSummary(summaryKey) {
+        efiApiEngine("data/summary", function(data) {
+            var currency = "PLN"
+            var currencyTaged = '<span class="currency">' + currency + '</span>'
+            var amount = data.content[0][summaryKey].toLocaleString()
+            $(".dashboard-summary-stats." + summaryKey).html(amount + ' ' + currencyTaged);
 
-    efiApiEngine("data/summary", function(data) {
-        console.log(data.content[0]);
-        $(".dashboard-summary-balance").text(data.content[0].balance);
-        $(".dashboard-summary-funds").text(data.content[0].funds);
-        $(".dashboard-summary-payments").text(data.content[0].payments);
-
-    });
-
-
-
-
-
-
-
+        });
+    }
+    efiSummary("balance");
+    efiSummary("funds");
+    efiSummary("payments");
 
 
 }); //end of document
