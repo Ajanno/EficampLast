@@ -41,7 +41,10 @@ $(document).on("ready", function() {
 
 
 
-    //Funkcja wysyła zapytanie do api o przekazuje funkcje callback  
+    //Funkcja wysyła zapytanie do api o przekazuje funkcje callback
+    //Dobrą praktyką jest sprawdzenie callbacka czy jest to funcja
+    //If(typeof = "function"){callback};
+
     function efiApiEngine(endpoint, callback) {
         $.ajax({
             type: "get",
@@ -68,6 +71,25 @@ $(document).on("ready", function() {
     efiSummary("balance");
     efiSummary("funds");
     efiSummary("payments");
+
+    function efiHistoryData() {
+        efiApiEngine("data/history", function(data) {
+            return (data.content);
+        });
+    }
+
+    // function historyGenerator() {
+    //     let list = "<ul>";
+    //     $.each(efiHistoryData(), function() {
+    //         $.each(this, function(name, value) {
+    //             list += "<li>" + value + " </li>";
+    //         });
+    //     });
+    //     list += "</ul>";
+    //     return list;
+    // }
+
+
 
 
 }); //end of document
