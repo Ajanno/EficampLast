@@ -33,10 +33,10 @@ $(document).on("ready", function() {
         event.preventDefault();
         $(".dashboard-massege-toolpip").toggle("slow");
     });
+    //Nav basic animation
     $(".dashboard-main-nav li").on("click", function() {
-       $(this).addClass('dashboard-selected').siblings().removeClass('dashboard-selected');
-
-       
+        $(this).addClass('dashboard-selected')
+            .siblings().removeClass('dashboard-selected');
     });
 
 
