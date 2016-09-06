@@ -71,16 +71,66 @@ $(document).on("ready", function() {
     efiSummary("balance");
     efiSummary("funds");
     efiSummary("payments");
+    // function dateFormating(data) {
+    //    let dateObject = Date.parse(data);
+    //    let dateDays = dateObject.getDate();
+    //    let dateMonth = dateMonth.getMonth()+1;
+    //    return dateDays +"."+ dateMonth;
 
+    // }
     function efiHistoryData() {
         efiApiEngine("data/history", function(data) {
-            return (data.content);
+            let historyData = data.content;
+            let list = "<ul>";
+            console.log(Date(historyData[0].date).getDate());
+            $.each(historyData, function(index) {
+                list += "<li>";
+                //stworzyc spany
+                //formatowanie daty
+                    // zaprasowac dane  
+                    // pobrac dni i pobrac miesce
+                    // stworzyc string dd.mm
+                let dateData = historyData[index].date,
+                    descriptionData = historyData[index].description,
+                    catergoryData = historyData[index].description,
+                    amountData = historyData[index].amount,
+                    currencyData = historyData[index].currency;
+
+
+
+                list += '<span class="history-date">' + dateData + '</span>' +
+
+                    '<div class="history-description-category">'+
+                    '<span class="history-description">' + descriptionData + '</span>' +
+                    '<span class="history-category">' + catergoryData + '</span>' +
+                    '</div>'+
+
+                    '<span class="history-amount">' + amountData + '</span>' +
+                    '<span class="history-currency">' + currencyData + '</span>' +
+                    '</li>';
+            });
+            list+="</ul>"
+            $(".history").html(list);
+            // console.log(historyData[0])
+            // $(".history-date").text(historyData[0].date);
+            // $(".history-description").text(historyData[0].description);
+            // $(".history-category").text(historyData[0].catergory);
+            // $(".history-amount").text(historyData[0].amount);
+            // $(".history-currency").text(historyData[0].currency);
         });
     }
+    efiHistoryData();
+    //Pobieram dane z  serwera
+    //wyciagam 1 obiekt
+    // twoerze pentle ktora bedzie generowala html z pierwszego obiektu
+    // zapentlam dane
+
+    // for (i=0, i<historyData.length, i+=1h )
 
     // function historyGenerator() {
     //     let list = "<ul>";
-    //     $.each(efiHistoryData(), function() {
+    //        let dsds =efiHistoryData()
+    //     $.each(dsds, function() {
     //         $.each(this, function(name, value) {
     //             list += "<li>" + value + " </li>";
     //         });

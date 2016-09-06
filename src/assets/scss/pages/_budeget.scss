@@ -1,0 +1,13 @@
+.donaut-charts {
+	width: 300px;
+	height:300px;
+	border-radius: 300px;
+	border: 30px solid $logincolor;
+	float: left;
+	text-align: center;
+	padding: 100px 0;
+	&.donaut-active {
+		border: 5px solid $logincolor;
+	}
+
+}
