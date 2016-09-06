@@ -133,6 +133,34 @@
     .history {
         background-color: $mywhite;
         border-radius: 4px;
+        height: 400px;
+        overflow-y: scroll;
+        padding: 0;
+        ul {
+            list-style: none;
+            padding:0;
+            margin: 0;
+
+            li {
+                border-bottom: 1px solid $graybackground;
+
+                .history-column {
+                    display: inline-block;
+                    text-align: center;
+                    &:nth-child(1){
+                        width: 20%;
+                    }
+                    &:nth-child(2){
+                        width: 50%;
+                        text-align: left;
+                        padding: 1rem .5rem;
+                    }
+                    &:nth-child(3){
+                        width: 30%;
+                    }
+                }
+            }
+        }
     }
 }
 

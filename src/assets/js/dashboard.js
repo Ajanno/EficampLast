@@ -71,18 +71,18 @@ $(document).on("ready", function() {
     efiSummary("balance");
     efiSummary("funds");
     efiSummary("payments");
-    // function dateFormating(data) {
-    //    let dateObject = Date.parse(data);
-    //    let dateDays = dateObject.getDate();
-    //    let dateMonth = dateMonth.getMonth()+1;
-    //    return dateDays +"."+ dateMonth;
+    function dateFormating(data) {
+        let dateData = new Date(data)
+        let dateDays = dateData.getDate();
+        let dateMonth = dateData.getMonth()+1;
+        return dateDays +"."+ dateMonth;
 
-    // }
+     }
     function efiHistoryData() {
         efiApiEngine("data/history", function(data) {
             let historyData = data.content;
             let list = "<ul>";
-            console.log(Date(historyData[0].date).getDate());
+           
             $.each(historyData, function(index) {
                 list += "<li>";
                 //stworzyc spany
@@ -90,33 +90,28 @@ $(document).on("ready", function() {
                     // zaprasowac dane  
                     // pobrac dni i pobrac miesce
                     // stworzyc string dd.mm
-                let dateData = historyData[index].date,
+                let dateData = dateFormating(historyData[index].date),
                     descriptionData = historyData[index].description,
-                    catergoryData = historyData[index].description,
+                    catergoryData = historyData[index].category,
                     amountData = historyData[index].amount,
                     currencyData = historyData[index].currency;
 
 
 
-                list += '<span class="history-date">' + dateData + '</span>' +
+                list += '<div class="history-column"><span class="history-date">' + dateData + '</span>' +
 
-                    '<div class="history-description-category">'+
-                    '<span class="history-description">' + descriptionData + '</span>' +
+                    '</div><div class="history-column">'+
+                    '<span class="history-description">' + descriptionData + '</span><br>' +
                     '<span class="history-category">' + catergoryData + '</span>' +
-                    '</div>'+
+                    '</div><div class="history-column">'+
 
                     '<span class="history-amount">' + amountData + '</span>' +
-                    '<span class="history-currency">' + currencyData + '</span>' +
+                    '<span class="history-currency">' + currencyData + '</span></div>' +
                     '</li>';
             });
             list+="</ul>"
             $(".history").html(list);
-            // console.log(historyData[0])
-            // $(".history-date").text(historyData[0].date);
-            // $(".history-description").text(historyData[0].description);
-            // $(".history-category").text(historyData[0].catergory);
-            // $(".history-amount").text(historyData[0].amount);
-            // $(".history-currency").text(historyData[0].currency);
+         
         });
     }
     efiHistoryData();
