@@ -24,11 +24,11 @@
 							<p>
 								<a href="#" class="dashboard-massages">
 									<span></span>
-									<i class="fa fa-envelope" aria-hidden="true"></i>
+									<img src="assets/img/icon/envelope.svg" alt="masseges button">
 								</a>
 								&nbsp;
 								<a href="#" class="dashboard-settings">
-									<i class="fa fa-cog" aria-hidden="true"></i>
+									<img src="assets/img/icon/gear.svg" alt="setting button">
 								</a>
 							</p>
 						</div>
@@ -43,22 +43,22 @@
 				<ul class="menu">
 					<li class="dashboard-selected">
 						<a href="#" >
-							<i class="fa fa-home" aria-hidden="true"></i><br>Home
+							<img src="assets/img/icon/home.png" alt="home button"><br>Home
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<i class="fa fa-area-chart" aria-hidden="true"></i><br>Analyse
+							<img src="assets/img/icon/analyze.png" alt="analyze button"><br>Analyse
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<i class="fa fa-calendar-o" aria-hidden="true"></i><br>Plan
+							<img src="assets/img/icon/plan.png" alt="plan-button"><br>Plan
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<i class="fa fa-bar-chart" aria-hidden="true"></i><br>Earn
+							<img src="assets/img/icon/analyze.png" alt="earn-button"><br>Earn
 						</a>
 					</li>
 				</ul>
@@ -92,13 +92,13 @@
 	</div>
 </header>
 <main class="dashboard-main">
-<section class="dashboard-summary">
+<div class="dashboard-heading-panel">
 	<div class="row">
 		<div class="column small-12 medium-8 large-8">
 			<h1>Finnace life stream</h1>
 		</div>
 		<div class="column small-12 medium-4 large-4">
-			<div class="summary-headline-buttons text-right">
+			<div class="dasboard-heading-buttons text-right">
 				<span class="text-bold">Add&nbsp;</span>
 				<a href="#features" class="button">bank</a>
 				<a href="#features" class="button">payment</a>
@@ -118,63 +118,41 @@
 			<h2>Schedulen payments</h2>
 			<span class="dashboard-summary-stats payments text-bold"></span>
 		</div>
-		<div class="column small-12 medium-3 text-right summary-headline-buttons">
+		<div class="column small-12 medium-3">
+			<div class="text-right dasboard-heading-buttons bottom">
 			<span>Acount Analysis</span>
 			<label class="my-switch" checked>
 				<input type="checkbox">
-				<span class="swich-indicator"></span>
+				<!-- <span class="swich-indicator"></span> -->
 				<span>On</span>
 				<span>Off</span>
 			</label>
+			</div>
 		</div>
 	</div>
-</section>
+</div>
 <section class="dashboard-charts">
 	<div class="row">
 		<div class="columns small-12 medium-12 large-12">
 			<div class="chart">	
-				<h1>Tu bedzie wykres</h1>
+				<h2>Tu bedzie wykres</h2>
 			</div>
 		</div>
 	</div>
 </section>
-<section class="dashboard-main">
+
 	<div class="row">
 		<div class="columns small-12 medium-12 large-6">
-		<h1>Produkty</h1>
+		<h2>Produkty</h2>
 			<div class="products">	
-				<div class="row collapse">
-					<div class="columns small-6 medium-6 large-6 products-button">
-						<a href="">
-							Wallets
-						</a>
-					</div>
-					<div class="columns small-6 medium-6 large-6 products-button">
-						<a href="">
-							Deposists
-						</a>
-					</div>
-					<div class="columns small-6 medium-6 large-6 products-button">
-						<a href="">
-							Accounts
-						</a>
-					</div>
-					<div class="columns small-6 medium-6 large-6 products-button">
-						<a href="">
-							Funds
-						</a>
-					</div>
-					<div class="columns small-6 medium-6 large-6 products-button end">
-						<a href="">
-							Bank Loans
-						</a>
-					</div>
+				<div class="row collapse small-up-2 medium-up-2 large-up-2 products-container">
+					
 				</div>
 				
 			</div>
 		</div>
 		<div class="columns small-12 medium-12 large-6">
-		<h1>Historia</h1>
+		<h2>Historia</h2>
 			<div class="history">
 			<ul>
 				<li>
@@ -190,6 +168,6 @@
 			</div>
 		</div>
 	</div>
-</section>
+
 </main>
 <footer></footer>

@@ -1,3 +1,4 @@
+
 .dashboard-massages {
     position: relative;
 
@@ -54,7 +55,7 @@
 
 .dashboard-settings {
     &:hover {
-        i {
+        img {
             animation-name: spin;
             animation-duration: 5000ms;
             animation-iteration-count: infinite;
@@ -155,4 +156,3 @@
         }
     }
 }
-

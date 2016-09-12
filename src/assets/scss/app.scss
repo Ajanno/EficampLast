@@ -65,8 +65,11 @@
 @import "pages/_login";
 
 //dashboard imports
+@import "pages/dashboard/_dashboards-header.scss";
 @import "pages/_dashboard.scss";
-@import "pages/dashboard/_dashboards-header-modules.scss";
-@import "pages/dashboard/_dashboardsummary.scss";
+@import "pages/dashboard/_dashboards-header-aniamation.scss";
+@import "pages/dashboard/_dashboard-heading-panel.scss";
+
+@import "pages/_grywalizacja.scss";
 
 @import "pages/_budeget.scss";

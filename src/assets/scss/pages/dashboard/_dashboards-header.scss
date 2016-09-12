@@ -1,0 +1,88 @@
+.dashboard-header {
+    background-color: $logincolor;
+    color: $mywhite;
+
+    a {
+        color: $mywhite;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    .dashboard-user-info {
+        position: relative;
+        padding: 0;
+        margin-top: 1.03125rem;
+
+        .dashboard-avatar {
+            border-radius: 4px;
+        }
+
+        .dashboard-user-name {
+            p:first-child {
+                margin-bottom: 2.5rem;
+            }
+
+            p:last-child {
+                img {
+                    height: 20px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .dashboard-main-nav {
+        ul {
+            a {
+                @include dashboard-menu;
+
+                padding: 2rem 1rem;
+
+                img {
+                    height: 40px;
+                    width: auto;
+                }
+            }
+
+            .dashboard-selected {
+                background-color: $myblack;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: -20px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    width: 30px;
+                    height: 20px;
+                    background-color: $myblack;
+                    border-radius: 0 0 30px 30px;
+                }
+            }
+        }
+    }
+
+    .dashboard-right-menu {
+        a {
+            @include dashboard-menu;
+
+            font-size: 1.5em;
+            padding: .5rem 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .dashboard-logout {
+            border-left: 1px solid rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                opacity: 1;
+                color: $logoutpink;
+            }
+        }
+    }
+}
+

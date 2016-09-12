@@ -1,96 +1,22 @@
-.dashboard-header {
-    background-color: $logincolor;
-    color: $mywhite;
 
-    a {
-        color: $mywhite;
-
-        &:hover {
-            opacity: .9;
-        }
-    }
-
-    .dashboard-user-info {
-        position: relative;
-        padding: 0;
-        margin-top: 1.03125rem;
-
-        .dashboard-avatar {
-            border-radius: 4px;
-        }
-
-        .dashboard-user-name {
-            p:first-child {
-                margin-bottom: 2.5rem;
-            }
-
-            p:last-child {
-                font-size: 1.2rem;
-            }
-        }
-    }
-
-    .dashboard-main-nav {
-
-        ul {
-
-            a {
-                @include dashboard-menu;
-
-                padding: 2rem 1rem;
-
-                i {
-                    font-size: 1.5rem;
-                }
-            }
-
-            .dashboard-selected {
-                background-color: $myblack;
-                position: relative;
-
-                &:after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    bottom: -20px;
-                    left: 50%;
-                    transform: translate(-50%, 0);
-                    width: 30px;
-                    height: 20px;
-                    background-color: $myblack;
-                    border-radius: 0 0 30px 30px;
-                    
-                }
-            }
-        }
-    }
-
-    .dashboard-right-menu {
-        
-        a {
-            @include dashboard-menu;
-
-            font-size: 1.5em;
-            padding: .5rem 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .dashboard-logout {
-            border-left: 1px solid rgba(255, 255, 255, 0.7);
-
-            &:hover {
-                opacity: 1;
-                color: $logoutpink;
-            }
-        }
-    }
-}
 .dashboard-main {
     padding-top: 1px;
     background-color: $graybackground;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 300;
+        margin: 0;
+    }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+    }
 }
-.dashboard-charts{
-    .chart{
+
+.dashboard-charts {
+    .chart {
         width: 100%;
         height: 380px;
         background-color: $mywhite;
@@ -98,11 +24,11 @@
         margin: 2rem 0;
     }
 }
+
 .dashboard-main {
-    
     .products {
         a {
-            background-color:$mywhite;
+            background-color: $mywhite;
             color: $myblack;
             display: block;
             width: 100%;
@@ -110,35 +36,41 @@
             padding: 2rem;
             margin-bottom: 10px;
             transition: background-color 1s;
+            transition: color .7s;
+
             &:focus,
             &:hover {
-                background-color:$logincolor;
+                background-color: $logincolor;
+                color: $mywhite;
                 transition: background-color 1s;
+                transition: color .7s;
+
             }
-            
-          
-
-
         }
+
         .products-button {
-             &:nth-child(odd){
+            
+    
+            &:nth-child(odd) {
                 padding-right: 5px;
             }
-              &:nth-child(even){
+
+            &:nth-child(even) {
                 padding-left: 5px;
             }
         }
+    }
 
-      }
     .history {
         background-color: $mywhite;
         border-radius: 4px;
         height: 400px;
         overflow-y: scroll;
         padding: 0;
+
         ul {
             list-style: none;
-            padding:0;
+            padding: 0;
             margin: 0;
 
             li {
@@ -147,16 +79,29 @@
                 .history-column {
                     display: inline-block;
                     text-align: center;
-                    &:nth-child(1){
+
+                    &:nth-child(1) {
                         width: 20%;
+                        padding: 2rem;
                     }
-                    &:nth-child(2){
+
+                    &:nth-child(2) {
                         width: 50%;
                         text-align: left;
                         padding: 1rem .5rem;
                     }
-                    &:nth-child(3){
+
+                    &:nth-child(3) {
                         width: 30%;
+                        padding: 2rem;
+                    }
+                }
+
+                &.income {
+                    .history-amount,
+                     {
+                        color: green;
+
                     }
                 }
             }

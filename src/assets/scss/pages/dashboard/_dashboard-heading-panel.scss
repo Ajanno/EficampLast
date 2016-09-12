@@ -1,0 +1,83 @@
+.dashboard-heading-panel{
+    margin-top: 3rem;
+    margin-bottom: .5rem;
+    
+    .dasboard-heading-buttons {
+        vertical-align: center;
+        margin-top: 14px;
+        &.bottom {
+            margin-top: 45px;
+        }
+
+        span, a {
+            margin: 0;
+        }
+
+        a {
+            text-transform: uppercase;
+            font-weight: 100;
+            margin-left: 10px;
+            min-width: 100px;
+
+        }
+    }
+    
+    
+    .dashboard-summary-stats,
+    .currency {
+    	font-size: 1.5rem;
+    }
+
+    .currency,
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+    }
+
+}
+
+.my-switch {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 100;
+    display: inline-block;
+    width: 100px;
+    border-radius: 4px;
+    background-color: $mywhite;
+    overflow: hidden;
+    vertical-align: center;
+    padding: 0;
+    box-sizing:border-box;
+    text-align: center;
+
+    
+    // .swich-indicator {
+    //     display: none;
+    //     width: 50%;
+    //     height: 65.35px;
+    //     background-color: green;
+    //     position: absolute;
+    //     z-index: 1;
+    // }
+    span{
+        box-sizing: border-box;
+        display: inline-block;
+        width: 47%;
+        padding: .5rem 0;
+        margin: 0;
+    }
+
+    input {
+        display: none;
+        &:checked + .my-switch {
+            span {
+                &:first-of-type{
+                    background-color: green;
+                }
+            }
+        }
+    }
+    
+
+}
