@@ -11,4 +11,11 @@ $(document).on("ready", function() {
             $(".account-achievments").show();
         }
     });
+    //funkcja checked
+    $(".account-achievments").children('.checked').toggle();
+    $(".account-achievments").on("click", function(){
+        $(this).children('.progres').toggle();
+        $(this).children('.checked').toggle();
+
+    });
 }); //Ready End

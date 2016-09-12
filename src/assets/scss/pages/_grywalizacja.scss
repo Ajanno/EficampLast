@@ -1,15 +1,17 @@
 .heading-stats {
     font-size: 1.2rem;
 }
+
 .grywalizacja-button {
     &.non-active {
-
         background-color: $secondgray;
+
         &:hover {
             background-color: darken($secondgray, 5%);
         }
     }
 }
+
 .grywalizacja-panel-acount {
     margin-top: 3rem;
 }
@@ -27,84 +29,98 @@
     &.in-progres {
         color: $mywhite;
     }
+
+    .checked {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 35px;
+        height: auto;
+    }
+
     &.in-progres {
         &:after {
             content: " ";
             display: block;
-            position: absolute;            
+            position: absolute;
             right: 5px;
             top: 5px;
             bottom: 5px;
             background-color: $logincolor;
             border-radius: 0 4px 4px 0;
             width: 24%;
+        }
 
-        }
         &.save-objective {
-             &:after {
+            &:after {
                 width: 80%;
-             }
+            }
         }
+
         &.privete-setting {
-             &:after {
+            &:after {
                 width: 40%;
-             }
+            }
         }
     }
+
     span {
         z-index: 3;
         position: absolute;
+
         &.caption {
             bottom: 10%;
             left: 0;
             right: 0;
         }
+
         &.progres {
             opacity: 0;
             top: 10%;
             left: 10%;
             font-size: 1.6em;
             transition: opacity 1s;
-            &.checked {
-                background-image: url(../img/icon/ok.svg);
-                color: transparent;
-            } 
         }
+
         &.icons {
             opacity: 1;
             top: 12%;
             right: 10%;
             transition: opacity 1s;
+
             img {
                 width: 20px;
                 height: auto;
             }
         }
     }
+
     &:hover,
     &:focus {
         padding: 0;
+
         span {
             &.caption {
                 font-size: 1.1em;
             }
+
             &.progres {
-              opacity: 1;
-              transition: opacity 1s; 
+                opacity: 1;
+                transition: opacity 1s;
             }
+
             &.icons {
                 opacity: 0;
                 transition: opacity 1s;
             }
         }
+
         &.in-progres {
             &:after {
                 display: none;
-                }
             }
+        }
     }
-
-
 
     img {
         width: 100;
