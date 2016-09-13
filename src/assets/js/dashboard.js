@@ -139,7 +139,7 @@ $(document).on("ready", function() {
                     '<span class="history-category">' + catergoryData + '</span>' +
                     '</div><div class="history-column">' +
 
-                    '<span class="history-amount">' + amountData + '</span>' +
+                    '<span class="history-amount">' + amountData + ' '+'</span>' +
                     '<span class="history-currency">' + currencyData + '</span></div>' +
                     '</li>';
             });

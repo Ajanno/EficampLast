@@ -86,14 +86,18 @@
                     }
 
                     &:nth-child(2) {
-                        width: 50%;
+                        width: 45%;
                         text-align: left;
                         padding: 1rem .5rem;
                     }
 
                     &:nth-child(3) {
-                        width: 30%;
+                        width: 35%;
                         padding: 2rem;
+
+                        .history-amount {
+                            font-weight: 700;
+                        }
                     }
                 }
 
