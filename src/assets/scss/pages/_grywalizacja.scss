@@ -12,10 +12,6 @@
     }
 }
 
-.grywalizacja-panel-acount {
-    margin-top: 3rem;
-}
-
 .account-achievments {
     border-radius: 4px;
     overflow: hidden;
@@ -28,14 +24,6 @@
     &.done,
     &.in-progres {
         color: $mywhite;
-    }
-
-    .checked {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 35px;
-        height: auto;
     }
 
     &.in-progres {
@@ -64,6 +52,18 @@
         }
     }
 
+    h3 {
+        z-index: 3;
+        position: absolute;
+        font-size: 1rem;
+
+        &.caption {
+            bottom: 10%;
+            left: 0;
+            right: 0;
+        }
+    }
+
     span {
         z-index: 3;
         position: absolute;
@@ -80,6 +80,52 @@
             left: 10%;
             font-size: 1.6em;
             transition: opacity 1s;
+
+            &:after {
+                content: "";
+                display: block;
+                width: 0px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: -100px;
+                background-image: url(../img/icon/star.png);
+                background-size: 20px 20px;
+                background-repeat: repeat-x;
+            }
+
+            &.locked {
+                &:after {
+                    background-image: url(../img/icon/locked.png);
+                }
+            }
+
+            &.white-star {
+                &:after {
+                    background-image: url(../img/icon/star2.png);
+                }
+            }
+
+            &.one-star {
+                &:after {
+                    width: 20px;
+                    transform: translate(40px, -50%);
+                }
+            }
+
+            &.two-star {
+                &:after {
+                    width: 40px;
+                    transform: translate(20px, -50%);
+                }
+            }
+
+            &.three-star {
+                &:after {
+                    width: 60px;
+                }
+            }
         }
 
         &.icons {
@@ -98,6 +144,10 @@
     &:hover,
     &:focus {
         padding: 0;
+
+        h3.caption {
+            font-size: 1.1em;
+        }
 
         span {
             &.caption {
@@ -125,5 +175,44 @@
     img {
         width: 100;
         height: auto;
+    }
+}
+
+.dashboard-main {
+    .grywalizacja-panel-acount {
+        margin-top: 3rem;
+
+        .thumbnail-container {
+            margin-left: -5px;
+            margin-right: -5px;
+
+            .column {
+                &.thumbnail-checked {
+                    .account-achievments {
+                        &:before {
+                            position: absolute;
+                            content: " ";
+                            width: 30px;
+                            height: 30px;
+                            top: 20px;
+                            left: 20px;
+                            background-image: url(../img/icon/ok.svg);
+                            background-repeat: no-repeat;
+                            background-size: 30px 30px;
+                        }
+
+                        &.white-checkbox {
+                            &:before {
+                                background-image: url(../img/icon/ok2.svg);
+                            }
+                        }
+
+                        .progres {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
